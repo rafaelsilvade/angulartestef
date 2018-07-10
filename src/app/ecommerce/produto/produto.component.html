@@ -1,0 +1,23 @@
+<my-nav></my-nav>
+<div class="container">
+  <div class="row mt-5" *ngIf="produto">
+    <div class="col-6">
+      <img src="{{produto.img}}" class="img-thumbnail rounded" />
+    </div>
+    <div class="col-5">
+      <h2>{{produto.Nome}}</h2>
+      
+      <h5 class="mt-5 mb-5">R$ {{produto.preco}}</h5>
+      <button mat-raised-button color="primary" (click)="addcart()" class="btn-block">Comprar</button>
+      <a routerLink="/"><button mat-raised-button class="btn-block mt-4">Voltar</button></a>
+    </div>
+
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <h4>Descrição do produto</h4>
+        <p class="text-justify">{{produto.descricao}}</p>
+    </div>
+  </div>
+</div>

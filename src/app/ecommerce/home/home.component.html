@@ -1,0 +1,22 @@
+<my-nav></my-nav>
+
+<div class="container mt-5" fxLayout="row">
+  <div fxFlex fxLayoutAlign="center">
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Pesquisar</mat-label>
+      <input matInput placeholder="" (keyup)="0" #pesquisa>
+      <mat-icon matPrefix class="mr-2">search</mat-icon>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap fxLayoutGap="20px">
+
+  <div class="item item-1" fxFlex *ngFor="let produto of produtos | filter : pesquisa.value">
+    <a routerLink="/produto/{{produto.Id}}" style="text-decoration: none;">
+      <app-card-produto [produto]="produto"></app-card-produto>
+    </a>
+  </div>
+
+
+</div>

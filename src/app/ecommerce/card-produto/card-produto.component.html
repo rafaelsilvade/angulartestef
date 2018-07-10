@@ -1,0 +1,11 @@
+<mat-card class="produto-card mt-4" *ngIf="produto">
+  <mat-card-header>
+    <mat-card-title></mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{produto.img}}" alt="">
+  <mat-card-content>
+    <p>{{produto.Nome}}</p>
+    <h5>R$ {{produto.preco}}</h5>
+    <button mat-raised-button color="primary" (click)="addcart()">Comprar</button>
+  </mat-card-content>
+</mat-card>
