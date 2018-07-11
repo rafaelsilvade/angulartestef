@@ -11,12 +11,15 @@
 </div>
 
 <div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap fxLayoutGap="20px">
-
   <div class="item item-1" fxFlex *ngFor="let produto of produtos | filter : pesquisa.value">
     <a routerLink="/produto/{{produto.Id}}" style="text-decoration: none;">
       <app-card-produto [produto]="produto"></app-card-produto>
     </a>
   </div>
-
-
+</div>
+<div class="container"> 
+  <div class="row">
+    <mat-paginator [length]="9" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]" (page)="paginator($event)">
+    </mat-paginator>
+  </div>
 </div>

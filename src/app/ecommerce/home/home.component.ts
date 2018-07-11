@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../produtos';
 import { ProdutoService } from '../produto.service';
+import { PageEvent } from '../../../../node_modules/@angular/material';
 
 @Component({
   selector: 'home',
@@ -14,7 +15,11 @@ export class HomeComponent implements OnInit {
   constructor(private sproduto: ProdutoService) { }
 
   ngOnInit() {
-    this.sproduto.getProdutos().subscribe((val) => this.produtos = val);
+    this.sproduto.getProdutoPage(0, 5).subscribe((val)=>this.produtos = val);
   }
   
+  paginator(event: PageEvent){
+    console.log(event);
+    this.sproduto.getProdutoPage(event.pageIndex, event.pageSize).subscribe((val)=>this.produtos = val);
+  }
 }

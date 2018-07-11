@@ -9,10 +9,13 @@ export class ProdutoService {
 
   constructor() { }
 
-  getProdutos():Observable<Produto[]>{
+  getProdutos(): Observable<Produto[]> {
     return of(PRODUTOS);
   }
-  getProduto(id:number):Observable<Produto>{
+  getProduto(id: number): Observable<Produto> {
     return of(PRODUTOS.find(pro => pro.Id === id));
+  }
+  getProdutoPage(page: number, leng: number): Observable<Produto[]> {
+    return of(PRODUTOS.slice(page, leng));
   }
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EcommerceRoutingModule } from './ecommerce-routing.module';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatMenuModule, MatCardModule, MatFormFieldModule, MatInputModule, MatBadge, MatBadgeModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatMenuModule, MatCardModule, MatFormFieldModule, MatInputModule, MatBadge, MatBadgeModule, MatPaginatorModule } from '@angular/material';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
@@ -29,7 +29,8 @@ import { ProdutoComponent } from './produto/produto.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatPaginatorModule
 
   ],
   declarations: [
